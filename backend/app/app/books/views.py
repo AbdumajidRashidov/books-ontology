@@ -510,8 +510,8 @@ def get_books_with_NLP(request):
         }
         books_data.append(book)
     
-    # if len(doc.ents) == 0:
-    #     return JsonResponse({"message": "Hello, I am fresher NLP model. Please make sentences clearly. Give me book names or authors. Also I can recommend books for you by genre and bu publication date. Thanks.:)" , "question":text_query, "books":[]},  safe=False)    
+    if len(doc.ents) == 0:
+        return JsonResponse({"message": "Hello, I am fresher NLP model. Please make sentences clearly. Give me book names or authors. Also I can recommend books for you by genre and bu publication date. Thanks.:)" , "question":text_query, "books":[]},  safe=False)    
     
     unique_books = {}
 
